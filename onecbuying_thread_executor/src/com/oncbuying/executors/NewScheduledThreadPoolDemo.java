@@ -19,5 +19,6 @@ public class NewScheduledThreadPoolDemo {
             final int temp = i;
             newScheduledThreadPool.schedule(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp),3,TimeUnit.SECONDS);
         }
+        newScheduledThreadPool.shutdown();
     }
 }
