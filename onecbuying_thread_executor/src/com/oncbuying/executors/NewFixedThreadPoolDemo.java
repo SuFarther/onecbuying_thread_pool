@@ -20,5 +20,6 @@ public class NewFixedThreadPoolDemo {
             final int  temp = i;
             newFixedThreadPool.execute(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp));
         }
+        newFixedThreadPool.shutdown();
     }
 }
