@@ -19,5 +19,6 @@ public class NewSingleThreadExecutorDemo {
             final int  temp = i;
             newSingleThreadExecutor.execute(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp));
         }
+        newSingleThreadExecutor.shutdown();
     }
 }
