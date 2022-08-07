@@ -14,15 +14,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class NewScheduledThreadPoolDemo {
     public static void main(String[] args) {
-        ScheduledExecutorService newScheduledThreadPool = Executors.newScheduledThreadPool(5);
+        ScheduledExecutorService newScheduledThreadPool = Executors.newScheduledThreadPool(3);
         for (int i = 0; i < 10; i++) {
             final int temp = i;
-            newScheduledThreadPool.schedule(new Runnable() {
-                @Override
-                public void run() {
-                    newScheduledThreadPool.execute(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp));
-                }
-            },3, TimeUnit.SECONDS);
+            newScheduledThreadPool.schedule(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp),3,TimeUnit.SECONDS);
         }
     }
 }
