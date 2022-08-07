@@ -15,19 +15,9 @@ public class NewSingleThreadExecutorDemo {
     public static void main(String[] args) {
         ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 10; i++) {
-            final int index = i;
-            newSingleThreadExecutor.execute(new Runnable() {
 
-                @Override
-                public void run() {
-                    System.out.println("index:" + index);
-                    try {
-                        Thread.sleep(200);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            final int  temp = i;
+            newSingleThreadExecutor.execute(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp));
         }
     }
 }
