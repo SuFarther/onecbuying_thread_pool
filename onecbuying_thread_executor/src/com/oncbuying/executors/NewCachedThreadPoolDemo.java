@@ -31,8 +31,7 @@ public class NewCachedThreadPoolDemo {
 //                }
 //            });
             newCachedThreadPool.execute(()-> System.out.println("threadName:"+Thread.currentThread().getName() + ",i:"+temp));
-//            newCachedThreadPool.shutdown();
         }
-
+        newCachedThreadPool.shutdown();
     }
 }
